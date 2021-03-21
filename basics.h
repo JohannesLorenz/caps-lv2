@@ -38,6 +38,7 @@
 #define _ISOC99_SOURCE 1
 #define _ISOC9X_SOURCE 1
 
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 

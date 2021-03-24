@@ -125,7 +125,7 @@ T clamp (T value, T lower, T upper)
 	return value;
 }
 
-static inline float frandom() { return (float) random() / (float) RAND_MAX; }
+static inline float frandom() { return (float) rand() / (float) RAND_MAX; }
 
 /* NB: also true if 0  */
 inline bool 

@@ -184,7 +184,7 @@ class IIR2v4
 			{
 				v4f_t *a = data(), *b = a + 2, *x = a + 5, *y = a + 7;
 
-				register v4f_t r = s * a[0];
+				v4f_t r = s * a[0];
 				
 				r += a[1] * x[h];
 				r += b[1] * y[h];
@@ -200,11 +200,11 @@ class IIR2v4
 			}
 
 		/* the production version with less pointer arithmetic in the prologue */
-		inline v4f_t process (register v4f_t s)
+		inline v4f_t process (v4f_t s)
 			{
 				v4f_t *a = data();
 
-				register v4f_t r = s * a[0];
+				v4f_t r = s * a[0];
 				
 				r += a[1] * a[5+h]; /* a[1] * x[h] */
 				r += a[2+1] * a[7+h]; /* b[1] * y[h] */
@@ -225,7 +225,7 @@ class IIR2v4
 			{
 				v4f_t *a = data();
 
-				register v4f_t r = s * a[0];
+				v4f_t r = s * a[0];
 				
 				r += a[2+1] * a[7+h]; /* b[1] * y[h] */
 
@@ -325,10 +325,10 @@ class IIR2v4Bank
 
 				v4f_t acc = v4f_0;
 
-				register uint h2 = h1 ^ 1;
+				uint h2 = h1 ^ 1;
 				for (uint i = 0; i < n; ++i, a += 7)
 				{
-					register v4f_t r = s * a[0];
+					v4f_t r = s * a[0];
 					
 					r +=   a[1] * x[h1];
 					r += a[2+1] * a[5+h1]; /* b[1] * y[h1] */
@@ -352,10 +352,10 @@ class IIR2v4Bank
 
 				v4f_t acc = v4f_0;
 
-				register uint h2 = h1 ^ 1;
+				uint h2 = h1 ^ 1;
 				for (uint i = 0; i < N; ++i, a += 7)
 				{
-					register v4f_t r;
+					v4f_t r;
 					
 					r =    a[1] * x[h1];
 					r += a[2+1] * a[5+h1]; /* b[1] * y[h1] */
@@ -379,10 +379,10 @@ class IIR2v4Bank
 
 				v4f_t acc = v4f_0;
 
-				register uint h2 = h1 ^ 1;
+				uint h2 = h1 ^ 1;
 				for (uint i = 0; i < n; ++i, a += 7)
 				{
-					register v4f_t r = s * a[0];
+					v4f_t r = s * a[0];
 					
 					r += a[2+1] * a[5+h1]; /* b[1] * y[h1] */
 
@@ -585,7 +585,7 @@ class Resonator4fBank
 			{
 				v4f_t *a = state + i*Item; 
 
-				register uint h2 = h1 ^ 1;
+				uint h2 = h1 ^ 1;
 				x = x * a[0]; /* x * a[0] */
 				
 				x += a[1] * a[3+h1]; /* b[1] * y[h1] */
@@ -607,8 +607,8 @@ class Resonator4fBank
 
 				v4f_t s = (v4f_t) {x,x,x,x};
 
-				register uint h2 = h1 ^ 1;
-				register v4f_t r = s * a[0]; /* x * a[0] */
+				uint h2 = h1 ^ 1;
+				v4f_t r = s * a[0]; /* x * a[0] */
 				
 				r += a[1] * a[3+h1]; /* b[1] * y[h1] */
 				r += a[2] * a[3+h2]; /* b[2] * y[h2] */

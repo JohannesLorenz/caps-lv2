@@ -165,7 +165,7 @@ class Sin4f
 		inline v4f_t get()
 			{
 				v4f_t *y = data();
-				register v4f_t s = y[2] * y[z]; 
+				v4f_t s = y[2] * y[z];
 				z ^= 1;
 				s -= y[z];
 				return y[z] = s;

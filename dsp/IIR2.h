@@ -107,9 +107,9 @@ class IIR2
 
 		inline T process (T s)
 			{
-				register int z = h;
+				int z = h;
 
-				register T r = s * a[0];
+				T r = s * a[0];
 				
 				r += a[1] * x[z];
 				r += b[1] * y[z];
@@ -128,9 +128,9 @@ class IIR2
 
 		inline T process_bp (T s)
 			{
-				register int z = h;
+				int z = h;
 
-				register T r = s * a[0];
+				T r = s * a[0];
 				
 				r += b[1] * y[z];
 
@@ -151,9 +151,9 @@ class IIR2
 		 * case */
 		inline T process_0_1()
 			{
-				register int z = h;
+				int z = h;
 
-				register T r = 0;
+				T r = 0;
 				
 				r += a[1] * x[z];
 				r += b[1] * y[z];
@@ -172,9 +172,9 @@ class IIR2
 
 		inline T process_0_2()
 			{
-				register int z = h;
+				int z = h;
 
-				register T r = 0;
+				T r = 0;
 				
 				r += b[1] * y[z];
 
@@ -192,9 +192,9 @@ class IIR2
 
 		inline T process_0_3()
 			{
-				register int z = h;
+				int z = h;
 
-				register T r = 0;
+				T r = 0;
 				
 				r += b[1] * y[z];
 

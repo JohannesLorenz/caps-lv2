@@ -78,7 +78,7 @@ CabinetIII::cycle (uint frames)
 
 	for (uint i = 0; i < frames; ++i)
 	{
-		register cabinet_float acc = s[i] + normal;
+		cabinet_float acc = s[i] + normal;
 		
 		x[h] = acc;
 		acc *= a[0];

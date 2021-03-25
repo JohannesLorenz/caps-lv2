@@ -38,7 +38,7 @@ inline float exp10f(float f) {return __exp10f(f);}
 
 #elif defined(__MINGW32__) || defined(__MINGW64__)
 
-inline float exp10f(float f) {return pow10f(f);}
+inline float exp10f(float f) {return powf(10,f);}
 
 #endif
 
